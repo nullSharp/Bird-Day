@@ -21,7 +21,7 @@ public List<Transform>positions = new List<Transform>();
 	IEnumerator Spawn()
 	{
 	spawnOrel = false;
-	yield return new WaitForSeconds(5f);
+	yield return new WaitForSeconds(2.5f);
 	Instantiate(orel,positions[Random.Range(1,5)].position,Quaternion.identity);
 	spawnOrel = true;
 	}

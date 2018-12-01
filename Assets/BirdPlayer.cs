@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdPlayer : MonoBehaviour {
+	public float score = 0;
 	private bool canFly=true;
 private float speed = 2.5f;
 private Rigidbody2D player_rigidbody;
