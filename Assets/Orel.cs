@@ -21,7 +21,7 @@ public GameObject player;
 	void Update () {
 		RotateFunc();
 	i++;
-	if(i >= 2000)
+	if(i >= 1000)
 	{
 	Destroy(gameObject);
 	}

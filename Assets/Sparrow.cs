@@ -14,7 +14,7 @@ private SpriteRenderer sprite;
 	void Update () {
 		if(direction == 1)
 		{
-		sprite.flipX = false
+		sprite.flipX = false;
         transform.Translate(1 * Time.deltaTime,0,0);
 		}
 		if(direction == -1)

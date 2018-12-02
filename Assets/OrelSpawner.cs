@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrelSpawner : MonoBehaviour {
 private bool spawnOrel = true;
-public GameObject orel;
+public GameObject orel,sparrow,parrot;
 public List<Transform>positions = new List<Transform>();
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,10 @@ public List<Transform>positions = new List<Transform>();
 	{
 	spawnOrel = false;
 	yield return new WaitForSeconds(2.5f);
-	Instantiate(orel,positions[Random.Range(1,5)].position,Quaternion.identity);
+	Instantiate(orel,positions[Random.Range(1,8)].position,Quaternion.identity);
+	Instantiate(sparrow,positions[Random.Range(1,8)].position,Quaternion.identity);
+	Instantiate(sparrow,positions[Random.Range(1,8)].position,Quaternion.identity);
+	Instantiate(parrot,positions[Random.Range(1,8)].position,Quaternion.identity);
 	spawnOrel = true;
 	}
 }

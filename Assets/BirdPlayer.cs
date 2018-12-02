@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdPlayer : MonoBehaviour {
+	private bool canChangeDirection = true;
 	public float score = 0;
 	private bool canFly=true;
 private float speed = 2.5f;
@@ -27,6 +28,8 @@ public Sprite simpleSprite;
 		{
 		spriteBird.flipX = true;
 		}
+		if(canChangeDirection)
+		{
 		if(Input.GetKeyDown(KeyCode.LeftArrow))
 		{
 		direction = -1;
@@ -34,6 +37,7 @@ public Sprite simpleSprite;
 		 if(Input.GetKeyDown(KeyCode.RightArrow))
 		{
 		direction = 1;
+		}
 		}
 		transform.Translate(direction*speed* Time.deltaTime,0,0);
 		if(canFly)
@@ -43,6 +47,18 @@ public Sprite simpleSprite;
 	StartCoroutine(Rot());
 		}
 		}
+	}
+	void OnCollisionEnter2D(Collision2D c)
+	{
+	if(c.gameObject.tag=="Death")
+	{
+	Destroy(gameObject);
+	}
+	
+	}
+	void OnCollisionExit2D(Collision2D c)
+	{
+
 	}
 	IEnumerator Rot()
 	{

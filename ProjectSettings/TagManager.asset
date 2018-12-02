@@ -6,6 +6,8 @@ TagManager:
   tags:
   - bird
   - eggs
+  - Death
+  - Ground
   layers:
   - Default
   - TransparentFX
